@@ -1,3 +1,18 @@
+var albumSquirrel = {
+     title: 'This is Nuts',
+     artist: 'Rad Squirrels',
+     label: 'Rodent Rap',
+     year: '2016',
+     albumArtUrl: 'assets/images/album_covers/01.png',
+     songs: [
+         { title: 'I like trees.', duration: '4:26' },
+         { title: 'I like nuts.', duration: '3:14' },
+         { title: 'I like other squirrels.', duration: '5:01' },
+         { title: 'I like stealing your snacks.', duration: '3:21'},
+         { title: 'Where did I bury that nut?', duration: '2:15'}
+     ]
+ };
+
 var albumPicasso = {
      title: 'The Colors',
      artist: 'Pablo Picasso',
@@ -28,7 +43,7 @@ var albumPicasso = {
      ]
  };
 
- var createSongRow = function(songNumber, songName, songLength) {
+ var createSongRow = function (songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
       + '  <td class="song-item-number">' + songNumber + '</td>'
@@ -39,6 +54,7 @@ var albumPicasso = {
 
      return template;
  };
+
  var setCurrentAlbum = function(album) {
       // #1
       var albumTitle = document.getElementsByClassName('album-view-title')[0];
@@ -64,4 +80,23 @@ var albumPicasso = {
 
   window.onload = function() {
       setCurrentAlbum(albumPicasso);
+      var currentAlbum = albumPicasso;
   };
+
+    var findNextAlbum= function(currentAlbum) { 
+      if (currentAlbum = albumPicasso) {
+          currentAlbum = albumMarconi;
+          setCurrentAlbum(albumMarconi);  
+      }
+        if (currentAlbum = albumMarconi) {
+            currentAlbum = albumSquirrel;
+            setCurrentAlbum(albumSquirrel);
+        }
+        
+        else {
+            currentAlbum = albumPicasso;
+            setCurrentAlbum(albumPicasso);
+        }
+    };
+
+document.getElementsByClassName("album-cover-art").addEventListener("click", findNextAlbum(currentAlbum));
