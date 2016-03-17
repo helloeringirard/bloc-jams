@@ -80,23 +80,14 @@ var albumPicasso = {
 
   window.onload = function() {
       setCurrentAlbum(albumPicasso);
-      var currentAlbum = albumPicasso;
+      var albums = [albumPicasso, albumMarconi, albumSquirrel];
+      var index = 1;
+      var albumCoverImage = document.getElementsByClassName('album-cover-art')[0];
+      albumCoverImage.addEventListener("click", function(event) {
+         setCurrentAlbum(albums[index]);
+          index++;
+          if(index == albums.length) {
+              index = 0;
+          }
+      });
   };
-
-    var findNextAlbum= function(currentAlbum) { 
-      if (currentAlbum = albumPicasso) {
-          currentAlbum = albumMarconi;
-          setCurrentAlbum(albumMarconi);  
-      }
-        if (currentAlbum = albumMarconi) {
-            currentAlbum = albumSquirrel;
-            setCurrentAlbum(albumSquirrel);
-        }
-        
-        else {
-            currentAlbum = albumPicasso;
-            setCurrentAlbum(albumPicasso);
-        }
-    };
-
-document.getElementsByClassName("album-cover-art").addEventListener("click", findNextAlbum(currentAlbum));
