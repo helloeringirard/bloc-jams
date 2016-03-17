@@ -31,14 +31,6 @@ body.collection {
      color: rgba(255, 255, 255, 0.6);
  }
 
- .collection-album-container .caption p a {
-     color: black;
- }
-
-.collection-album-container .caption p  {
-     color: black;
- }
-
  .collection-album-container img {
      width: 80%;
  }

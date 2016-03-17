@@ -17,13 +17,11 @@ body.album {
      position: relative;
      top: 1.5rem;
      padding: 1rem;
-     color: black;
  }
 
  .album-view-details .album-view-title {
      font-weight: 300;
      font-size: 2rem;
-     color: black;
  }
 
  .album-view-details .album-view-artist {
@@ -34,7 +32,7 @@ body.album {
  .album-view-details .album-view-release-info {
      font-weight: 300;
      font-size: 0.75rem;
-     color: black;
+
  }
 
  .album-view-song-list {
@@ -42,7 +40,6 @@ body.album {
      margin: 1.5rem auto;
      font-weight: 300;
      font-size: 0.75em;
-     color: black;
  }
 
  .album-view-song-item {
