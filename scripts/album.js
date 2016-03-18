@@ -120,14 +120,26 @@ var currentlyPlayingSong = null;
   }
   
   var findParentByClassName = function(element, targetClass) {
-    if (element) {
-        var currentParent = element.parentElement;
+    var currentParent = element.parentElement;
+      
+      if (element) {
+        
         while (currentParent.className != targetClass) {
-            currentParent = currentParent.parentElement;
+            currentParent = currentParent.parentElement;    
         }
-        return currentParent;
-    }
-};
+        
+        if (currentParent.className == targetClass) {
+           return currentParent;
+            else {
+                alert("Parent does not exist!")
+            }   
+        }  
+        else {
+            alert("No parent found.");
+        }
+      }
+    };
+
 
 var getSongItem = function(element) {
     switch (element.className) {
